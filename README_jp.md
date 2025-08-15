@@ -5,8 +5,6 @@
 これは [Falconsai/nsfw_image_detection](https://huggingface.co/Falconsai/nsfw_image_detection) に基づいた NSFW コンテンツ検出器です。  
 モデル：google/vit-base-patch16-224-in21k
 
-精度の確認は以下のリンクで行えます：[NSFW 検出器](https://www.vx.link/nsfw_detector.html)
-
 他の一般的な NSFW 検出器と比較して、本検出器には以下の利点がございます：
 
 * AI ベースで、より高い精度を実現しています。
@@ -75,18 +73,6 @@ curl -X POST -F "path=/path/to/image.jpg" http://localhost:3333/check
 * `ffmpeg_max_timeout` 動画処理時のタイムアウト制限を設定します。
 
 なお、/tmpディレクトリはコンテナ内の一時ディレクトリとして機能し、高性能なストレージデバイスに設定することでパフォーマンスが向上いたします。
-
-## パブリック API
-
-vx.link が提供する公開 API サービスをご利用いただけます。
-
-```bash
-# 検出
-curl -X POST -F "file=@/path/to/image.jpg" https://vx.link/public/nsfw
-```
-
-* 提出された画像は保存されません。
-* この API のリクエストレートは1分あたり30回に制限されていますのでご注意ください。
 
 ## ライセンス
 

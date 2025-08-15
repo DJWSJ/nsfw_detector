@@ -5,8 +5,6 @@
 这是一个 NSFW 内容检测器，它基于 [Falconsai/nsfw_image_detection](https://huggingface.co/Falconsai/nsfw_image_detection) 。  
 模型: google/vit-base-patch16-224-in21k
 
-你可以在这里验证它的准确度：[NSFW 检测器](https://www.vx.link/nsfw_detector.html)
-
 相比其它常见的 NSFW 检测器，这个检测器的优势在于：
 
 * 基于 AI ，准确度更好。
@@ -73,18 +71,6 @@ curl -X POST -F "path=/path/to/image.jpg" http://localhost:3333/check
 * `ffmpeg_max_timeout` 处理视频时的超时限制。
 
 此外， /tmp 目录作为容器中的临时目录，配置到一个高性能的存储设备上会提高性能。
-
-## 公共 API
-
-可以使用 vx.link 提供的公共 API 服务来检测 NSFW 内容。
-
-```bash
-# 检测文件，会自动识别文件类型
-curl -X POST -F "file=@/path/to/image.jpg" https://vx.link/public/nsfw
-```
-
-* 不会保存你提交的图片。
-* 请注意，该 API 速率限制为每分钟 30 次请求。
 
 ## 许可证
 

@@ -7,7 +7,6 @@
 This is an NSFW content detector based on [Falconsai/nsfw_image_detection](https://huggingface.co/Falconsai/nsfw_image_detection).  
 Model: google/vit-base-patch16-224-in21k
 
-You can try it online(using Public API): [NSFW Detector](https://www.vx.link/nsfw_detector.html)
 
 Compared to other common NSFW detectors, this detector has the following advantages:
 
@@ -75,18 +74,6 @@ You can refer to the [config](config) file as a reference.
 * `ffmpeg_max_timeout` Timeout limit when processing videos.
 
 Additionally, since the /tmp directory serves as a temporary directory in the container, configuring it on a high-performance storage device will improve performance.
-
-## Public API
-
-You can use the public API service provided by vx.link.
-
-```bash
-# Detect files, automatically recognize file types
-curl -X POST -F "file=@/path/to/image.jpg" https://vx.link/public/nsfw
-```
-
-* Your submitted images will not be saved.
-* Please note that the API rate limit is 30 requests per minute.
 
 ## License
 
